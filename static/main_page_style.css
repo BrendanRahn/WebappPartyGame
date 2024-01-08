@@ -1,0 +1,36 @@
+#testdiv {
+    border-color: black;
+    border-width: 4px;
+    border-style: solid;
+    width: 95vw;
+    height: 40vh;
+    background-color: bisque;
+    margin: auto;
+    display: flex;
+    align-items: center;
+
+
+}
+
+#spinner {
+    width: 10px;
+    height: 95%;
+    background-color: black;
+    margin: auto;
+}
+
+.spin_animation {
+    animation-name: spin;
+    animation-duration: 1s;
+    
+}
+
+@keyframes spin {
+    from {}
+    to {transform: rotate(360deg);}
+}
+
+
+body {
+    background-color: rgb(64, 177, 177);
+}
