@@ -1,6 +1,17 @@
 
-function add_animation_class() {
-    var element = document.getElementById("spinner");
+window.onload = main;
+
+
+function main() {
+    var myelem = document.getElementById("spinner");
+console.log(myelem)
+myelem.addEventListener("click", function (event) {
+        animate_spinner();
+    });
+}
+
+function animate_spinner() {
+    var element = document.getElementById("needle");
 
     var current_animations = element.getAnimations()
 

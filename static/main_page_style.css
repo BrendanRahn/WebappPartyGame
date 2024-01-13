@@ -2,7 +2,7 @@
     width: 500px;
 }
 
-#test_div {
+#spinner {
     border-color: black;
     border-width: 4px;
     border-style: solid;
@@ -11,7 +11,7 @@
     max-width: 500px;
     height: 40vh;
     max-height: 500px;
-    background-color: bisque;
+    background-color: rgb(228, 174, 109);
     margin: auto;
     display: flex;
     align-items: center;
@@ -20,42 +20,37 @@
 
 }
 
-#dividing_line_0dg {
-    width: 5px;
+.dividing_line {
+    --line_width: 5px;
+    width: var(--line_width);
     height: 100%;
     background-color: black;
-    margin-left: 50%;
     position: absolute;
+    margin-left: 50%;
+    translate: calc(-1 * (var(--line_width)/2));
 }
 
+
+
 #dividing_line_45dg {
-    width: 5px;
-    height: 100%;
-    background-color: black;
+
     transform: rotate(45deg);
-    margin-left: 50%;
-    position: absolute;
+    
 }
 
 #dividing_line_90dg {
-    width: 5px;
-    height: 100%;
-    background-color: black;
+
     transform: rotate(90deg);
-    margin-left: 50%;
-    position: absolute;
+    
 }
 
 #dividing_line_135dg {
-    width: 5px;
-    height: 100%;
-    background-color: black;
+    
     transform: rotate(135deg);
-    margin-left: 50%;
-    position: absolute;
+    
 }
 
-#spinner {
+#needle {
     width: 10px;
     height: 95%;
     background-color: black;
