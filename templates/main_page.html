@@ -14,18 +14,25 @@
                 <div id="dividing_line_45dg" class="dividing_line"></div>
                 <div id="dividing_line_90dg" class="dividing_line"></div>
                 <div id="dividing_line_135dg" class="dividing_line"></div> 
-                <div id="needle">
-
-                </div>
-            
-            </div>
-            <button id="input_button" onclick="show_input_div()">Submit song</button>
-        
-            <div id="input_div" >
-                <label id="song_input_label">Enter a song</label>
-                <input type="text" id="song_input">
+                <div id="needle"></div>
             </div>
         </div>
+
+        <button id="input_button" onclick="show_input_div()">Submit song</button>
+        
+        <div id="input_div">
+            <button id="input_div_close" class="close_button"></button>
+            <form id="submission_form" onsubmit="submit_song();return false;">
+                <label id="song_input_label">Enter a song</label>
+                <input type="text" id="song_input">
+            </form>
+        </div>
+
+        <div id="display_song_div">
+            <button id="display_div_close" class="close_button"></button>
+        </div>
+
+        
     </div>
 
 

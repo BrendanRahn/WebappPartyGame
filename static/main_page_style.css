@@ -1,6 +1,19 @@
+:root {
+    --mock_screen_width: 500px;
+}
+
 #mock_phone_screen {
-    width: 500px;
-    position: static;
+    width: var(--mock_screen_width);
+    position: relative;
+}
+
+#display_song_div {
+    background-color: rgb(216, 235, 235);
+    border: 5px solid black;
+    border-radius: 10%;
+    width: 70vw;
+    height: 15vh;
+    position: absolute;
 }
 
 #input_div {
@@ -12,32 +25,51 @@
     max-width: 400px;
     max-height: 300px;
     position: absolute;
-    margin: auto;
     display: none;
+    top: 20%;
+    margin-left: max(
+                calc((var(--mock_screen_width) - 400px) / 2),
+                calc((var(--mock_screen_width) / 2) - (50vw / 2))
+                );
     
-    
+}
+
+.close_button {
+    background-color: rgb(192, 174, 174);
+    border-radius: 50%;
+    border: 2px solid gray;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    margin-top: 5%;
+    margin-left: calc(100% - 40px);
 }
 
 #song_input_label {
     display: block;
     position: relative;
-    width:fit-content;
+    width: fit-content;
     position: relative;
     margin: auto;
-    top: 40%;
 }
 
 #song_input {
     border: 2px solid black;
     display: block;
     position: relative;
+    width: 100%;
+    margin: auto;
+}
+
+#submission_form {
+    position: relative;
     width: 50%;
     margin: auto;
-    top: 40%;
+    top: 30%;
 }
 
 #container_div {
-    width: 500px;
+    width: var(--mock_screen_width);
 }
 
 #spinner {
@@ -46,7 +78,7 @@
     border-style: solid;
     border-radius: 50%;
     width: 40vh;
-    max-width: 500px;
+    max-width: var(--mock_screen_width);
     height: 40vh;
     max-height: 500px;
     background-color: rgb(228, 174, 109);

@@ -3,11 +3,19 @@ window.onload = main;
 
 
 function main() {
-    var myelem = document.getElementById("spinner");
-console.log(myelem)
-myelem.addEventListener("click", function (event) {
-        animate_spinner();
+    var spinner = document.getElementById("spinner");
+    spinner.addEventListener("click", function (event) {
+            animate_spinner();
     });
+
+    var close_buttons = document.getElementsByClassName("close_button");
+    for(var i=0; i<close_buttons.length; i++) {
+        close_buttons[i].addEventListener("click", function(event) {
+            var ancestor_div = event.target.closest("div").id;
+            close_window(ancestor_div);
+        });
+    }
+    
 }
 
 function animate_spinner() {
@@ -28,17 +36,26 @@ function animate_spinner() {
 function show_input_div() {
     var input_div = document.getElementById("input_div")
     
-    input_div.style.display = "block"
-    input_div.style.opacity = 0
+    input_div.style.display = "block";
+    input_div.style.opacity = 0;
     
     const animation = input_div.animate([
         {opacity: 0, offset: 0},
         {transform: "scale(150%)", offset:0.5},
         {opacity: 1, offset: 1},
         {transform: "scale(100%)", offset: 1}
-    ], 500);
+    ], 300);
     
-    input_div.style.opacity = 1
+    input_div.style.opacity = 1;
 
-    console.log("hit")
+}
+
+function close_window(element_id) {
+    var element = document.getElementById(element_id);
+
+    element.style.display = "none";
+}
+
+function submit_song() {
+    console.log("hit");
 }
