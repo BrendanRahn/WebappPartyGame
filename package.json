@@ -1,0 +1,11 @@
+{
+  "name": "webapppartygame",
+  "version": "1.0.0",
+  "description": "silly little game to play with friends",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brendan Rahn",
+  "license": "ISC"
+}

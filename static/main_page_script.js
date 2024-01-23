@@ -29,14 +29,15 @@ function animate_spinner() {
         const animation = 
             spinner.animate({transform: "rotate(360deg)"}, 2000);
             animation.id = "spin_animation";
-            animation.onfinish = show_div("display_song_div")
-        
-        
-
+            
+            var animation_end = animation.finished;
+            animation_end.then(() => {
+                show_div("display_song_div")
+            });
     }
     
    
-    show_div("display_song_div")
+    
     
 }
 
