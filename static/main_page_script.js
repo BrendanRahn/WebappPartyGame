@@ -59,3 +59,8 @@ function close_window(element_id) {
 function submit_song() {
     console.log("hit");
 }
+
+function show_song_div_temp() {
+    var elm = document.getElementById("display_song_div");
+    elm.style.display = "block"
+}
