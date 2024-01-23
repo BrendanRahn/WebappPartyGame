@@ -8,6 +8,7 @@ function main() {
             animate_spinner();
     });
 
+
     var close_buttons = document.getElementsByClassName("close_button");
     for(var i=0; i<close_buttons.length; i++) {
         close_buttons[i].addEventListener("click", function(event) {
@@ -25,28 +26,35 @@ function animate_spinner() {
 
     //if multiple animations are applied to this element this if statement will not work correctly
     if (current_animations.length == 0) {
-        const animation = spinner.animate({transform: "rotate(360deg)"}, 2000);
-        animation.id = "spin_animation";
+        const animation = 
+            spinner.animate({transform: "rotate(360deg)"}, 2000);
+            animation.id = "spin_animation";
+            animation.onfinish = show_div("display_song_div")
+        
+        
+
     }
     
-
+   
+    show_div("display_song_div")
     
 }
 
-function show_input_div() {
-    var input_div = document.getElementById("input_div")
+
+function show_div(div_id) {
+    selected_div = document.getElementById(div_id)
+
+    selected_div.style.display = "block";
+    selected_div.style.opacity = 0;
     
-    input_div.style.display = "block";
-    input_div.style.opacity = 0;
-    
-    const animation = input_div.animate([
+    selected_div.animate([
         {opacity: 0, offset: 0},
         {transform: "scale(150%)", offset:0.5},
         {opacity: 1, offset: 1},
         {transform: "scale(100%)", offset: 1}
     ], 300);
     
-    input_div.style.opacity = 1;
+    selected_div.style.opacity = 1;
 
 }
 

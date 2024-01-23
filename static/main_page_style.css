@@ -8,28 +8,39 @@
 }
 
 #display_song_div {
-    background-color: rgb(216, 235, 235);
+    --self_width: 70vw;
+    --self_max_width: 400px;
+    background-color: rgb(174, 231, 237);
     border: 5px solid black;
     border-radius: 10%;
     width: 70vw;
+    max-width: 400px;
     height: 15vh;
+    display: none;
     position: absolute;
+    top: 25%;
+    margin-left: max(
+                calc((var(--mock_screen_width) - var(--self_max_width)) / 2),
+                calc((var(--mock_screen_width) / 2) - (var(--self_width) / 2))
+                );
 }
 
 #input_div {
+    --self_width: 50vw;
+    --self_max_width: 400px;
     background-color: rgb(216, 235, 235);
     border: 5px solid black;
     border-radius: 10%;
-    width: 50vw;
+    width: var(--self_width);
     height: 30vh;
-    max-width: 400px;
+    max-width: var(--self_max_width);
     max-height: 300px;
     position: absolute;
     display: none;
     top: 20%;
     margin-left: max(
-                calc((var(--mock_screen_width) - 400px) / 2),
-                calc((var(--mock_screen_width) / 2) - (50vw / 2))
+                calc((var(--mock_screen_width) - var(--self_max_width)) / 2),
+                calc((var(--mock_screen_width) / 2) - (var(--self_width) / 2))
                 );
     
 }
