@@ -66,10 +66,17 @@ function close_window(element_id) {
 }
 
 function submit_song() {
-    console.log("hit");
+    var song = document.getElementById("song_input").value
+    fetch("http://localhost:5000/post_song", {
+        method: "POST",
+        body: {
+            song_name: song
+        }
+    })
 }
 
 function show_song_div_temp() {
     var elm = document.getElementById("display_song_div");
     elm.style.display = "block"
 }
+
